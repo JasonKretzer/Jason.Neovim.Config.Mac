@@ -2,7 +2,10 @@
 
 My settings for neovim for Ruby on Rails development.
 
-Credit where it is due. I have borrowed heavily from the following source: Th blog of [Josean Martinez](https://www.josean.com/posts/how-to-setup-neovim-2024.)  If you want to know what many of the plugins do, I suggest reading this post.  I have made some changes to fit my flows but you will get the gist.
+Credit where it is due. I have borrowed heavily from the following source: The blog of 
+[Josean Martinez](https://www.josean.com/posts/how-to-setup-neovim-2024).  If you want 
+to know what many of the plugins do, I suggest reading this post.  I also provide some 
+of the keymaps below.  I have made some changes to fit my flows but you will get the gist.
 
 ## Installation
 Clone this repo to your home directory.
@@ -13,9 +16,17 @@ Go into the Jason.Neovim.Config.Mac directory
 ```bash
 cd Jason.Neovim.Config.Mac
 ```
-Copy the nvim directory into your .config directory
+Create a .config directory in your home directory if you do not already have one.
 ```bash
-cp -r nvim ~/.config
+mkdir ~/.config
+```
+Create a nvim directory in your .config directory if you do not already have one.
+```bash
+mkdir ~/.config/nvim
+```
+Copy the contents of this directory into your .config/nvim directory
+```bash
+cp -r * ~/.config/nvim
 ```
 
 Note that I have copilot set up but I do not provide the package for it.  You will have to configure it yourself using the instructions [here](https://docs.github.com/en/copilot/using-github-copilot/getting-code-suggestions-in-your-ide-with-github-copilot?tool=vimneovim).  Until you set it up, you will want to comment out the appropriate line in `~/.config/lua/lazy-settings/plugins/init.lua`
@@ -28,7 +39,7 @@ return {
 ```
 
 ## My Most Used Keymaps
-My leader key is a comma (,), so when you see <leader> it means press comma.  You will run most of these in NORMAL mode unless otherwise stated.
+My leader key is a comma (,), so when you see `<leader>` it means press comma.  You will run most of these in NORMAL mode unless otherwise stated.
 
 Toggle the file tree on/off
 ```
@@ -45,7 +56,7 @@ Bring up Telescope to open files
 <leader>ff
 ```
 
-Bring up Telescope to switch between open buffers. **Note** that buffers also open as tabs across the top
+Bring up Telescope to switch between open buffers. **Note** that buffers also open as tabs across the top.
 ```
 <leader>fb
 ```
@@ -55,4 +66,4 @@ Bring up Telescope to search for a word across the entire current working direct
 <leader>fs
 ```
 
-**MORE TO COME OF THESE**  There are a number of good ones.
+**MORE TO COME OF THESE**  There are a number of good ones.  I will add more as I get time.
