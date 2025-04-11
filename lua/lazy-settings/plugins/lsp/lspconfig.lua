@@ -4,7 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/neodev.nvim",                   opts = {} },
   },
   config = function()
     -- import lspconfig plugin
@@ -29,8 +29,8 @@ return {
         opts.desc = "Show LSP references"
         keymap.set("n", "<leader><f12>", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
---        opts.desc = "Go to declaration"
---        keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+        --        opts.desc = "Go to declaration"
+        --        keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
         opts.desc = "Go to definition"
         keymap.set("n", "<f12>", vim.lsp.buf.definition, opts) -- go to definition
@@ -95,18 +95,39 @@ return {
           filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
         })
       end,
-      ["solargraph"] = function()
-        -- configure solargraph language server
-        lspconfig["solargraph"].setup({
+      ["ruby_lsp"] = function()
+        -- configure ruby language server
+        lspconfig["ruby_lsp"].setup({
           capabilities = capabilities,
           filetypes = { "ruby", "rb" },
         })
       end,
-      ["rubocop"] = function()
-        -- configure rubocop language server
-        lspconfig["rubocop"].setup({
+      -- ["solargraph"] = function()
+      --   -- configure solargraph language server
+      --   lspconfig["solargraph"].setup({
+      --     capabilities = capabilities,
+      --     filetypes = { "ruby", "rb" },
+      --   })
+      -- end,
+      -- ["rubocop"] = function()
+      --   -- configure rubocop language server
+      --   lspconfig["rubocop"].setup({
+      --     capabilities = capabilities,
+      --     filetypes = { "ruby", "rb" },
+      --   })
+      -- end,
+      ["standardrb"] = function()
+        -- configure standardrb language server
+        lspconfig["standardrb"].setup({
           capabilities = capabilities,
           filetypes = { "ruby", "rb" },
+        })
+      end,
+      ["eslint"] = function()
+        -- configure eslint language server
+        lspconfig["eslint"].setup({
+          capabilities = capabilities,
+          filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
         })
       end,
       ["marksman"] = function()
@@ -137,9 +158,9 @@ return {
           filetypes = { "json" },
         })
       end,
-      ["tsserver"] = function()
+      ["ts_ls"] = function()
         -- configure typescript language server
-        lspconfig["tsserver"].setup({
+        lspconfig["ts_ls"].setup({
           capabilities = capabilities,
         })
       end,

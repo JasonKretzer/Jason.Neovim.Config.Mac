@@ -10,7 +10,13 @@ return {
     local treesitter = require("nvim-treesitter.configs")
 
     -- configure treesitter
-    treesitter.setup({ -- enable syntax highlighting
+    treesitter.setup({
+      modules = {},
+      sync_install = false,
+      ignore_install = {},
+      auto_install = true,
+
+      -- enable syntax highlighting
       highlight = {
         enable = true,
       },
